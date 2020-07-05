@@ -5,7 +5,7 @@ import {
   DefaultTranslations,
   TranslationsConfig,
 } from 'yoshi-flow-editor-runtime/build/constants';
-import t from './template';
+import t from 'yoshi-common/build/template';
 
 export type TemplateControllerConfig = {
   id: string | null;

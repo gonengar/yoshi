@@ -4,7 +4,7 @@ import {
   DefaultTranslations,
   TranslationsConfig,
 } from 'yoshi-flow-editor-runtime/build/constants';
-import t from './template';
+import t from 'yoshi-common/build/template';
 import { viewerScriptOptionalImport } from './CommonViewerScriptEntry';
 
 type Opts = Record<

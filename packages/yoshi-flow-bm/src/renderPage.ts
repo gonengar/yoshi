@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs-extra';
 import { FlowBMModel, PageModel } from './model';
+<<<<<<< Updated upstream:packages/yoshi-flow-bm/src/renderPage.ts
 import {
   shouldAddExperiments,
   shouldAddFedops,
@@ -51,6 +52,22 @@ const renderPage = (page: PageModel, model: FlowBMModel) => {
     page.relativePath,
   );
   fs.outputFileSync(pageEntry, generatePageCode(page, model));
+=======
+import { GENERATED_DIR, PAGES_DIR } from './constants';
+import { renderLegacyPage } from './legacyPage';
+import componentTemplate from './templates/component';
+
+export const getPageEntryPath = ({ relativePath }: PageModel) =>
+  path.join(GENERATED_DIR, PAGES_DIR, relativePath);
+
+export const renderPage = (page: PageModel, model: FlowBMModel) => {
+  const pageEntry = getPageEntryPath(page);
+  fs.outputFileSync(pageEntry, componentTemplate({ model, component: page }));
+
+  if (page.config.legacyBundle) {
+    renderLegacyPage(page);
+  }
+>>>>>>> Stashed changes:packages/yoshi-flow-bm/src/page.ts
 };
 
 export default renderPage;

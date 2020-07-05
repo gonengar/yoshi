@@ -4,7 +4,7 @@ import {
   DefaultTranslations,
   ExperimentsConfig,
 } from 'yoshi-flow-editor-runtime/build/constants';
-import t from './template';
+import t from 'yoshi-common/build/template';
 
 type Opts = Record<
   'settingsWrapperPath' | 'componentFileName' | 'baseUIPath',

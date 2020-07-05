@@ -2,7 +2,7 @@ import {
   SentryConfig,
   ExperimentsConfig,
 } from 'yoshi-flow-editor-runtime/build/constants';
-import t from './template';
+import t from 'yoshi-common/build/template';
 import { TemplateControllerConfig } from './CommonViewerScriptEntry';
 
 type Opts = {

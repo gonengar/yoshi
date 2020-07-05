@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs-extra';
 import { ExportedComponentModel, FlowBMModel } from './model';
+<<<<<<< Updated upstream:packages/yoshi-flow-bm/src/renderExportedComponent.ts
 import {
   shouldAddExperiments,
   shouldAddFedops,
@@ -39,11 +40,17 @@ export default wrapComponent(Component, [
 ]);
   `;
 };
+=======
+import { EXPORTED_COMPONENTS_DIR, GENERATED_DIR } from './constants';
+import { renderLegacyExportedComponent } from './legacyExportedComponent';
+import componentTemplate from './templates/component';
+>>>>>>> Stashed changes:packages/yoshi-flow-bm/src/exportedComponent.ts
 
 const renderExportedComponent = (
   component: ExportedComponentModel,
   model: FlowBMModel,
 ) => {
+<<<<<<< Updated upstream:packages/yoshi-flow-bm/src/renderExportedComponent.ts
   const componentEntry = path.join(
     path.resolve(__dirname, `../tmp/${EXPORTED_COMPONENTS_DIR}`),
     component.relativePath,
@@ -52,6 +59,13 @@ const renderExportedComponent = (
     componentEntry,
     generateExportedComponentCode(component, model),
   );
+=======
+  const componentEntry = getExportedComponentEntryPath(component);
+  fs.outputFileSync(componentEntry, componentTemplate({ model, component }));
+  if (component.config.legacyBundle) {
+    renderLegacyExportedComponent(component);
+  }
+>>>>>>> Stashed changes:packages/yoshi-flow-bm/src/exportedComponent.ts
 };
 
 export default renderExportedComponent;

@@ -1,4 +1,4 @@
-import t from './template';
+import t from 'yoshi-common/build/template';
 import { viewerScriptOptionalImport } from './CommonViewerScriptEntry';
 
 type Opts = Record<'viewerScriptWrapperPath' | 'controllerFileName', string> & {

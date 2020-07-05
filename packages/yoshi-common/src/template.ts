@@ -1,4 +1,4 @@
-export default <TemplateOptions>(
+const t = <TemplateOptions>(
   literals: TemplateStringsArray,
   ...expressions: Array<(opts: TemplateOptions) => string>
 ) => {
@@ -12,3 +12,5 @@ export default <TemplateOptions>(
     return string;
   };
 };
+
+export default t;

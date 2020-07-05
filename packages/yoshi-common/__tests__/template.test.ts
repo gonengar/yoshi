@@ -1,4 +1,4 @@
-import t from '../template';
+import t from '../src/template';
 
 describe('template', () => {
   it('generated primitive templates w/o params', () => {
